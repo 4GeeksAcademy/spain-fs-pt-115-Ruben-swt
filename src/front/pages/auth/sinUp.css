@@ -1,0 +1,107 @@
+/* From Uiverse.io by R1SH4BH81 */ 
+/* Form Container */
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
+  border-radius: 15px;
+  overflow: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform: rotateX(-10deg);
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(10px); /* Glassy blur effect */
+  box-shadow:
+    rgba(0, 0, 0, 0.6) 0px 2px 4px,
+    rgba(0, 0, 0, 0.5) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.3) 0px -3px 0px inset;
+  animation: form-animation 0.5s ease-in-out;
+}
+
+@keyframes form-animation {
+  from {
+    transform: rotateX(-30deg);
+    opacity: 0;
+  }
+
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+/* Glassy Black Input */
+.input {
+  padding: 10px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent black background */
+  border: 2px solid rgba(255, 255, 255, 0.2); /* Light border to enhance the glass look */
+  backdrop-filter: blur(8px); /* Glassy blur */
+  box-shadow:
+    0px 2px 4px rgba(0, 0, 0, 0.5),
+    0px 7px 13px rgba(0, 0, 0, 0.3),
+    inset 0px -3px 0px rgba(0, 0, 0, 0.2);
+  color: white;
+  transition:
+    border-color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out,
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Lighter placeholder text */
+}
+
+.input:hover,
+.input:focus {
+  border-color: rgba(255, 255, 255, 0.4); /* Brightened border on hover/focus */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Darker glassy background on hover/focus */
+  transform: scale(1.05) rotateY(20deg);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+/* Button Style */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.6); /* Dark button background */
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform: rotateX(-10deg);
+  transition: all 0.3s ease-in-out;
+  box-shadow:
+    rgba(0, 0, 0, 0.5) 0px 2px 4px,
+    rgba(0, 0, 0, 0.4) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.3) 0px -3px 0px inset;
+}
+
+button:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Slightly lighter hover effect */
+  font-size: 17px;
+  transform: scale(1.05) rotateY(20deg) rotateX(10deg);
+  box-shadow:
+    rgba(0, 0, 0, 0.5) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    inset 0px -3px 0px rgba(0, 0, 0, 0.2);
+}

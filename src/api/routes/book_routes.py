@@ -44,7 +44,7 @@ def post_book(autor_id):
     db.session.commit()
     return jsonify({"msg":"Libro registrado.", "book": new_book.serialize() }),201
     
-@book_bp.router("/<int:autor_id>/<int:book_id>", methods=["DELETE"])
+@book_bp.route("/<int:autor_id>/<int:book_id>", methods=["DELETE"])
 def delete_book(autor_id, book_id):
     author = Author.query.get(autor_id)
     book = Book.query.get(book_id)
